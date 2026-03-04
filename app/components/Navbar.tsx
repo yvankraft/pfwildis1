@@ -20,7 +20,7 @@ const Navbar = () => {
       <motion.nav
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 10 }}
-        className=" nav absolut top-0 flex z-50 justify-evenly p-2 text-slate-800 dark:bg-zinc-900 dark:text-white rounded-2xl bg-white shadow-lg gap-4 w-full my-4 border border-slate-200  dark:border-slate-700 dark:shadow-slate-700"
+        className=" nav fixed left-1/2 -translate-x-1/2 w-[96%] flex z-50 justify-evenly p-2 text-slate-800 dark:bg-zinc-900 dark:text-white rounded-2xl bg-white shadow-lg gap-4 max-w-400 my-4 border border-slate-200  dark:border-slate-700 dark:shadow-slate-700"
       >
         <div>
           <motion.div id="fisrt" className=" flex items-center h-full">

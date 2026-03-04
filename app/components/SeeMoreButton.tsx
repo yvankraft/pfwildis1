@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion";
 
 interface Props {
   href: string;
+  text: string;
 }
 
 const arrowVariants: Variants = {
@@ -19,7 +20,7 @@ const arrowVariants: Variants = {
   },
 };
 
-export default function SeeMoreButton({ href }: Props) {
+export default function SeeMoreButton({ href, text }: Props) {
   return (
     <Link href={href} className="flex justify-center no-underline ">
       <motion.button
@@ -29,7 +30,7 @@ export default function SeeMoreButton({ href }: Props) {
         className="mt-4 px-4 py-2 flex flex-row items-center gap-2 bg-slate-600 hover:bg-slate-500 text-white transition-colors duration-300 group rounded-2xl"
       >
         <span className=" md:text-sm font-bold uppercase tracking-wider whitespace-nowrap ">
-          See More
+          {text}
         </span>
 
         <motion.svg
