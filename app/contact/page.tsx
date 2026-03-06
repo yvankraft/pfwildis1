@@ -51,7 +51,7 @@ const page = () => {
     window.location.href = `mailto:${user}@${domain}.${extension}`;
   };
   return (
-    <div className="grid grid-cols-2 gap-8  h-screen pt-24 p-7">
+    <div className="lg:grid lg:grid-cols-2 gap-8  bg:h-screen pt-24 p-7">
       <div className="bg-transparent h-auto p-8">
         <h1 className="text-9xl text-center text-slate-600 mt-4 mb-4">
           Profile
@@ -79,7 +79,7 @@ const page = () => {
       </div>
       <div
         className="  backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
-                border border-slate-400 dark:border-slate-700 dark:shadow-slate-700 rounded-2xl p-8 "
+                border border-slate-300 dark:border-slate-700 dark:shadow-slate-700 rounded-2xl p-8 "
       >
         <h1 className="text-2xl font-mono mb-4">Links</h1>
         <SocialLinks />
