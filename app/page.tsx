@@ -82,12 +82,20 @@ function Fireflies({ count = 40 }) {
 function Moon() {
   return (
     <mesh position={[5, 5, -10]}>
-      {" "}
-      {/* Plus proche et plus centrée */}
       <sphereGeometry args={[1.5, 32, 32]} />
-      <meshBasicMaterial color="#ffffcc" />{" "}
-      {/* BasicMaterial pour être sûr qu'elle brille sans lumière externe */}
+      <meshBasicMaterial color="#ffffcc" />
       <pointLight intensity={50} color="#ffffcc" distance={20} decay={1} />
+    </mesh>
+  );
+}
+
+//fonction soleil
+function Sun() {
+  return (
+    <mesh position={[5, 5, -10]}>
+      <sphereGeometry args={[1.5, 32, 32]} />
+      <meshBasicMaterial color="#FFD700" />
+      <pointLight intensity={2} distance={100} color="#FFF5B2" />
     </mesh>
   );
 }
@@ -123,36 +131,38 @@ function SingleModel({
   const { scene } = useGLTF(url);
 
   useGSAP(() => {
-    // ✅ Vérification de sécurité
     if (!meshRef.current) return;
 
-    // La magie du Scroll : Le modèle tourne quand on descend
-    const timeline = gsap.timeline({
-      ease: "none",
+    // On crée la timeline ici, elle s'appliquera à cet objet précis
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "body",
+        trigger: "body", // Le scroll de toute la page pilote l'objet
         start: "top top",
         end: "bottom bottom",
-        scrub: 1.5, // Lissage du mouvement
+        scrub: 2,
       },
     });
-    timeline.to(
-      meshRef.current.rotation,
-      {
-        y: Math.PI * 2, // 1 tours complets
-      },
-      0,
-    );
-    timeline.to(
-      meshRef.current.scale,
-      {
-        x: 5,
-        y: 5,
-        z: 5,
-      },
-      0,
-    );
-  });
+
+    tl.to(meshRef.current.position, {
+      z: 0.5,
+      ease: "power3.inOut",
+    })
+      .to(meshRef.current.rotation, {
+        y: -Math.PI * 0.2, // 90 degrés seulement
+        duration: 1,
+        ease: "power3.inOut",
+      })
+      .to(meshRef.current.position, {
+        y: 0.1,
+        duration: 1,
+        ease: "power3.inOut",
+      })
+      .to(meshRef.current.position, {
+        x: -2,
+        duration: 1.5,
+        ease: "power3.inOut",
+      });
+  }, []); // [] pour ne l'exécuter qu'au montage
 
   return (
     <Float speed={2} rotationIntensity={0.5}>
@@ -165,7 +175,6 @@ function SingleModel({
     </Float>
   );
 }
-
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -180,25 +189,8 @@ export default function Home() {
 
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
-
-  const modelRef = useRef<THREE.Group>(null);
-  useGSAP(() => {
-    if (!modelRef.current) return;
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1.5,
-      },
-    });
-
-    // 2. Utiliser modelRef.current au lieu de "#model1"
-    timeline.to(modelRef.current.position, { x: 5, y: 5, z: 5 });
-    timeline.to(modelRef.current.rotation, { y: Math.PI * 2 });
-  });
   return (
-    <main>
+    <main className="grid">
       <section
         className={`fixed inset-0 h-screen w-full transition-all duration-1000 pointer-events-none 
     ${
@@ -223,6 +215,7 @@ export default function Home() {
               <ambientLight intensity={0.7} />
               <directionalLight position={[10, 10, 5]} intensity={1} />
               <Environment preset="city" />
+              <Sun />
             </>
           )}
           {/* Brouillard */}
@@ -233,7 +226,7 @@ export default function Home() {
 
           <Suspense fallback={<Loader />}>
             {/* placons le modèle dans une position */}
-            <SingleModel url="/house.glb" position={[-6, -4, -5]} />
+            <SingleModel url="/house.glb" position={[-4, -4, -5]} />
           </Suspense>
         </Canvas>
       </section>
@@ -242,10 +235,10 @@ export default function Home() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           id="box1"
-          className=" w-1/3  p-8 relative z-20 
+          className=" lg:w-1/3  p-8 relative z-20 
                 backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
                 border border-slate-400 dark:border-slate-700 
-                rounded-2xl shadow-2xl mt-[50vh] mr-0 ml-auto dark:shadow-slate-700"
+                rounded-2xl shadow-2xl mt-[50vh] mr-[1%] ml-auto dark:shadow-slate-700"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             Immersive Digital Design
@@ -262,10 +255,10 @@ export default function Home() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           id="box2"
-          className=" w-1/3  p-8 relative z-20 
+          className=" lg:w-1/3  p-8 relative z-20 
                 backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
-                border border-slate-400 dark:border-slate-700 
-                rounded-2xl shadow-2xl mt-[50vh] mr-0 ml-auto dark:shadow-slate-700"
+                border border-slate-400 dark:border-slate-700 dark:shadow-slate-700
+                rounded-2xl shadow-2xl mr-[1%] ml-auto "
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             Beyond the Pixels.
@@ -287,7 +280,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           id="box3"
-          className="w-1/3 p-6 relative z-20 backdrop-blur-md bg-white/80 dark:bg-zinc-900/50 border-2 border-dashed border-amber-400/50 dark:border-zinc-700 rounded-3xl mt-[50vh] mr-0 ml-auto shadow-xl"
+          className="lg:w-1/3 p-6 relative z-20 backdrop-blur-md bg-white/80 dark:bg-zinc-900/50 border-2 border-dashed border-amber-400/50 dark:border-zinc-700 rounded-3xl mr-[1%] ml-auto shadow-xl"
         >
           <div className="flex items-start gap-4">
             <div className="p-3 bg-amber-100 dark:bg-zinc-800 rounded-2xl">
@@ -321,10 +314,10 @@ export default function Home() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           id="box4"
-          className=" w-1/3  p-8 relative z-20 
+          className=" lg:w-1/3  p-8 relative z-20 
                 backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
                 border border-slate-400 dark:border-slate-700 
-                rounded-2xl shadow-2xl mt-[50vh] mr-0 ml-auto dark:shadow-slate-700"
+                rounded-2xl shadow-2xl mr-[1%] ml-auto dark:shadow-slate-700"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             Technical Focus
@@ -343,7 +336,10 @@ export default function Home() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           id="about-box"
-          className="w-1/3 p-8 relative z-20 backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 border border-slate-400 dark:border-slate-700 rounded-2xl shadow-2xl mt-[50vh] mr-0 ml-auto dark:shadow-slate-700"
+          className=" lg:w-1/3  p-8 relative z-20 
+                backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
+                border border-slate-400 dark:border-slate-700 
+                rounded-2xl shadow-2xl mr-[1%] ml-auto dark:shadow-slate-700"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             My Journey
@@ -366,10 +362,10 @@ export default function Home() {
         <motion.div
           whileHover={{ scale: 1.1 }}
           id="box4"
-          className=" w-1/3  p-8 relative z-20 
+          className=" lg:w-1/3  p-8 relative z-20 
                 backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
                 border border-slate-400 dark:border-slate-700 
-                rounded-2xl shadow-2xl mt-[50vh] mr-0 ml-auto dark:shadow-slate-700"
+                rounded-2xl shadow-2xl mr-[1%] ml-auto dark:shadow-slate-700"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             Extended Portfolio
@@ -384,10 +380,10 @@ export default function Home() {
         <motion.div
           whileHover={{ scale: 1.1 }}
           id="box5"
-          className=" w-1/3  p-8 relative z-20 
+          className=" lg:w-1/3  p-8 relative z-20 
                 backdrop-blur-xs bg-white/80 dark:bg-zinc-900/80 
                 border border-slate-400 dark:border-slate-700 
-                rounded-2xl shadow-2xl mt-[50vh] mr-0 ml-auto mb-[10%] dark:shadow-slate-700"
+                rounded-2xl shadow-2xl mr-[1%] ml-auto mb-[10%] dark:shadow-slate-700"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             Let's Connect

@@ -42,7 +42,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.9 }}
             className="div"
           >
-            <Link href="../About" className={getStyle("../About")}>
+            <Link href="/About" className={getStyle("/About")}>
               About
             </Link>
           </motion.div>
@@ -51,7 +51,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.9 }}
             className="div"
           >
-            <Link href="../Project" className={getStyle("../Project")}>
+            <Link href="/Project" className={getStyle("/Project")}>
               Project
             </Link>
           </motion.div>
