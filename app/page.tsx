@@ -16,6 +16,7 @@ import {
   Clouds,
 } from "@react-three/drei";
 import SeeMoreButton from "./components/SeeMoreButton";
+import { useTheme } from "next-themes";
 
 //function pour les nuages
 function Weather({ isDarkMode }: { isDarkMode: boolean }) {
@@ -130,6 +131,8 @@ function SingleModel({
   const meshRef = useRef<THREE.Group>(null);
   const { scene } = useGLTF(url);
 
+  const { theme } = useTheme();
+
   useGSAP(() => {
     if (!meshRef.current) return;
 
@@ -139,7 +142,7 @@ function SingleModel({
         trigger: "body", // Le scroll de toute la page pilote l'objet
         start: "top top",
         end: "bottom bottom",
-        scrub: 2,
+        scrub: true,
       },
     });
 
@@ -149,20 +152,21 @@ function SingleModel({
     })
       .to(meshRef.current.rotation, {
         y: -Math.PI * 0.2, // 90 degrés seulement
-        duration: 1,
+
         ease: "power3.inOut",
       })
       .to(meshRef.current.position, {
         y: 0.1,
-        duration: 1,
         ease: "power3.inOut",
       })
       .to(meshRef.current.position, {
         x: -2,
-        duration: 1.5,
         ease: "power3.inOut",
+      })
+      .to(meshRef.current.position, {
+        z: -3,
       });
-  }, []); // [] pour ne l'exécuter qu'au montage
+  }, [[theme]]); // [] pour ne l'exécuter qu'au montage
 
   return (
     <Float speed={2} rotationIntensity={0.5}>
