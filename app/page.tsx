@@ -142,30 +142,14 @@ function SingleModel({
         trigger: "body", // Le scroll de toute la page pilote l'objet
         start: "top top",
         end: "bottom bottom",
-        scrub: true,
+        scrub: 2,
       },
     });
 
-    tl.to(meshRef.current.position, {
-      z: 0.5,
+    tl.to(meshRef.current.rotation, {
+      y: Math.PI * 4,
       ease: "power3.inOut",
-    })
-      .to(meshRef.current.rotation, {
-        y: -Math.PI * 0.2, // 90 degrés seulement
-
-        ease: "power3.inOut",
-      })
-      .to(meshRef.current.position, {
-        y: 0.1,
-        ease: "power3.inOut",
-      })
-      .to(meshRef.current.position, {
-        x: -2,
-        ease: "power3.inOut",
-      })
-      .to(meshRef.current.position, {
-        z: -3,
-      });
+    });
   }, [[theme]]); // [] pour ne l'exécuter qu'au montage
 
   return (
@@ -245,10 +229,10 @@ export default function Home() {
                 rounded-2xl shadow-2xl mt-[50vh] mr-[1%] ml-auto dark:shadow-slate-700"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
-            Immersive Digital Design
+            My first 3D Intagration
           </h2>
           <p className="text-lg font-bold uppercase mb-4 dark:text-white">
-            Welcome to my creative universe
+            Welcome to my Portfolio
           </p>
           <p className="dark:text-slate-400">
             An exploration of motion, 3D interactions, and high-performance

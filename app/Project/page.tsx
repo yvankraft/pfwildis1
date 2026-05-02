@@ -81,21 +81,11 @@ export default function ProjectsPage() {
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col justify-center items-center h-[100vh] w-[100%] mb-10"
         >
-          <video
-            src="/bg.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 h-full w-full object-cover"
-          >
-            Your browser does not support the video tag.
-          </video>
           <div className="relative z-20 text-center px-6">
-            <h1 className="text-6xl font-black uppercase tracking-tighter text-white  ">
+            <h1 className="text-6xl font-black uppercase tracking-tighter dark:text-white  ">
               Project
             </h1>
-            <p className="text-xl opacity-60 mt-4 max-w-2xl text-white">
+            <p className="text-xl opacity-60 mt-4 max-w-2xl dark:text-white">
               Here I'm not presenting projects, but I'm also giving you the
               opportunity to follow tutorials to recreate these pages if you'd
               like.

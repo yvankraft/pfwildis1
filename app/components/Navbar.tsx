@@ -24,7 +24,7 @@ const Navbar = () => {
       >
         <div>
           <motion.div id="fisrt" className=" flex items-center h-full">
-            <p className="text-2xl font-bold">logo</p>
+            <p className="text-2xl font-bold">PortFolio</p>
           </motion.div>
         </div>
         <div className="flex ">
