@@ -23,8 +23,8 @@ const projects = [
     tech: ["Next.js", "React", "Tailwind CSS", "API Logic"],
     description:
       "A scalable e-commerce platform focusing on backend architecture and complex state management.",
-    link: "https://e-shop-alpha-ashen.vercel.app/login",
-    github: "https://github.com/yvankraft/e-shop.git",
+    link: "https://mark.yvancorps.com",
+    github: "https://github.com/yvankraft/mark-web",
     tuto: "/tuto/e-shop",
     image: "/eshop.png",
   },
@@ -34,8 +34,8 @@ const projects = [
     tech: ["React.js", "JavaScript (ES6+)", "CSS3"],
     description:
       "A dynamic resume developed to demonstrate modern web interactions and smooth user experience.",
-    link: "https://yvankraft.github.io/home",
-    github: "https://github.com/yvankraft/CV.git",
+    link: "https://cv2.yvancorps.com",
+    github: "https://github.com/yvankraft/cv2",
     tuto: "/tuto/cv",
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
     description:
       "A responsive web magazine focused on high-performance UI/UX design and mobile-first approach.",
-    link: "https://page-web-fawn-five.vercel.app",
+    link: "https://passion.yvancorps.com",
     github: "https://github.com/yvankraft/Page_web.git",
     tuto: "/tuto/auto",
     image: "/auto.png",
@@ -55,7 +55,7 @@ const projects = [
     tech: ["Next.js", "Framer Motion", "Technical Visualization"],
     description:
       "Visualizing technical concepts in the field of unmanned aviation with advanced animations.",
-    link: "https://droners-tau.vercel.app", // Ajoute le lien si disponible
+    link: "https://drones.yvancorps.com", // Ajoute le lien si disponible
     github: "https://github.com/yvankraft/droners.git",
     tuto: "/tuto/droners",
     image: "/drone.png",
@@ -66,7 +66,7 @@ const projects = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Three.js"],
     description:
       "My professional portfolio (this site) showcasing technical projects with optimized performance.",
-    link: "https://pfwildis1.vercel.app",
+    link: "https://yvancorps.com",
     github: "https://github.com/yvankraft/pfwildis1.git",
     tuto: "/tuto/pf",
     image: "/pf.png",

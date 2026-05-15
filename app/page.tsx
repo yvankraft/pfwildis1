@@ -178,7 +178,7 @@ export default function Home() {
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
   return (
-    <main className="grid">
+    <main className="grid p-4">
       <section
         className={`fixed inset-0 h-screen w-full transition-all duration-1000 pointer-events-none 
     ${
@@ -221,7 +221,6 @@ export default function Home() {
       <section className="grid relative gap-[50vh] pointer-events-auto">
         <motion.div
           whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
           id="box1"
           className=" lg:w-1/3  p-8 relative z-20 
                 backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
@@ -232,16 +231,13 @@ export default function Home() {
             My first 3D Intagration
           </h2>
           <p className="text-lg font-bold uppercase mb-4 dark:text-white">
-            Welcome to my Portfolio
+            Quick going to my Project
           </p>
-          <p className="dark:text-slate-400">
-            An exploration of motion, 3D interactions, and high-performance
-            engineering.
-          </p>
+
+          <SeeMoreButton text="Project" href="/Project" />
         </motion.div>
         <motion.div
           whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
           id="box2"
           className=" lg:w-1/3  p-8 relative z-20 
                 backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
