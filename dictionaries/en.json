@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "Yvan Wildis Ngone Tchinda | Portfolio",
+    "description": "Full-Stack developer & Electrical Engineering student — portfolio, projects and resume of Yvan Wildis Ngone Tchinda."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "common": {
+    "downloadCv": "Download CV",
+    "email": "Email",
+    "seeAllProjects": "See all projects",
+    "liveDemo": "LIVE DEMO",
+    "code": "CODE",
+    "tutorial": "Tutorial",
+    "notPublished": "Not published yet"
+  },
+  "status": {
+    "live": "Live",
+    "inDevelopment": "In development",
+    "prototype": "Prototype"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "I build interactive web experiences and ship my own projects — from 3D portfolios to full-stack platforms.",
+      "aboutBtn": "About me",
+      "projectsBtn": "Projects"
+    },
+    "box1": {
+      "title": "My first 3D integration",
+      "subtitle": "Quick going to my Project",
+      "button": "Project"
+    },
+    "box2": {
+      "title": "Beyond the Pixels.",
+      "subtitle": "A journey through motion, 3D interactions, and high-performance engineering.",
+      "text": "This portfolio is more than just a simple collection of links. It is a demonstration of what modern web standards can offer in terms of fluidity and performance."
+    },
+    "box3": {
+      "darkTitle": "Experience the Night",
+      "lightTitle": "Reveal the Details",
+      "darkText": "You are currently viewing the high-precision dark interface, optimized for 3D depth and atmospheric lighting.",
+      "lightText": "Try switching your device to Dark Mode. Experience the dynamic lighting, fireflies, and the meticulous attention to detail hidden in the shadows.",
+      "recommended": "Recommended Experience"
+    },
+    "box4": {
+      "title": "Technical Focus",
+      "quote": "For this project, I focused heavily on the 3D aspect and animations powered by GSAP.",
+      "text": "Every movement is orchestrated to react to your scroll, creating a visual narrative between the code and the user."
+    },
+    "aboutBox": {
+      "title": "My Journey",
+      "text1": "I am a developer driven by the desire to merge technical performance with creative aesthetics. My journey is defined by a constant search for new ways to interact with the web.",
+      "text2": "Beyond just writing code, I focus on the feel of an interface—how it moves, how it reacts, and how it immerses the user. This portfolio is the result of that passion for detail and motion.",
+      "button": "About Me"
+    },
+    "box5": {
+      "title": "Extended Portfolio",
+      "text": "Naturally, this isn't the only project I'm working on. To see my other works, what better way than to visit the page dedicated to them?",
+      "button": "View Projects"
+    },
+    "box6": {
+      "title": "Let's Connect",
+      "text": "I would be very happy to receive your feedback or inquiries. Here, you will find everything you need to reach out. Please don't hesitate to leave a message or an email; I will personally ensure a response.",
+      "button": "Contact Me"
+    }
+  },
+  "about": {
+    "email": "Email",
+    "profileLabel": "About",
+    "profileTitle": "Profile",
+    "experienceLabel": "Career",
+    "experienceTitle": "Experience",
+    "educationLabel": "Studies",
+    "educationTitle": "Education",
+    "projectsLabel": "Work",
+    "projectsTitle": "Projects",
+    "skillsLabel": "Stack",
+    "skillsTitle": "Skills",
+    "languagesLabel": "Communication",
+    "languagesTitle": "Languages"
+  },
+  "projects": {
+    "eyebrow": "Selected work",
+    "title": "Projects",
+    "intro": "A selection of what I'm building — from shipped websites to apps and games still in progress. Some include step-by-step tutorials to recreate them.",
+    "featured": "Featured",
+    "filterAll": "All"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's work together",
+    "emailTitle": "Send me an email",
+    "emailSubtitle": "I will personally get back to you",
+    "locationSubtitle": "Based in North Rhine-Westphalia"
+  },
+  "footer": {
+    "tagline": "Building interactive web experiences from Hamm, Germany.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "emailMe": "Email me",
+    "rights": "All rights reserved.",
+    "creditBased": "This work is based on",
+    "creditBy": "by",
+    "creditLicensed": "licensed under"
+  }
+}

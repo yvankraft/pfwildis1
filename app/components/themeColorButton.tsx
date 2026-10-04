@@ -2,25 +2,32 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Sun, Moon } from "lucide-react"; // Pour tes icônes expressives
+import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Empeche les erreurs d'hydratation (le bouton ne s'affiche qu'une fois chargé côté client)
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+  if (!mounted) {
+    return <div className="w-9 h-9 rounded-full" aria-hidden />;
+  }
+
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-xl bg-zinc-200 dark:bg-zinc-800"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-colors"
     >
-      {theme === "dark" ? (
-        <Sun size={20} color="#fbbf24" />
+      {isDark ? (
+        <Sun size={18} className="text-amber-400" />
       ) : (
-        <Moon size={20} color="#18181b" />
+        <Moon size={18} className="text-zinc-800" />
       )}
     </button>
   );

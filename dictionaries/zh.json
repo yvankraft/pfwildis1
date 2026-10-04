@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "Yvan Wildis Ngone Tchinda | Portfolio",
+    "description": "全栈开发者 & 电气工程学生 — Yvan Wildis Ngone Tchinda 的作品集、项目与简历。"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "projects": "项目",
+    "contact": "联系",
+    "language": "语言"
+  },
+  "common": {
+    "downloadCv": "下载简历",
+    "email": "邮箱",
+    "seeAllProjects": "查看全部项目",
+    "liveDemo": "LIVE DEMO",
+    "code": "CODE",
+    "tutorial": "教程",
+    "notPublished": "尚未发布"
+  },
+  "status": {
+    "live": "已上线",
+    "inDevelopment": "开发中",
+    "prototype": "原型"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "我打造交互式网络体验并发布自己的项目 —— 从 3D 作品集到全栈平台。",
+      "aboutBtn": "关于我",
+      "projectsBtn": "项目"
+    },
+    "box1": {
+      "title": "我的第一个 3D 集成",
+      "subtitle": "快速前往我的项目",
+      "button": "项目"
+    },
+    "box2": {
+      "title": "像素之外。",
+      "subtitle": "一段穿越动效、3D 交互与高性能工程的旅程。",
+      "text": "这个作品集不仅仅是链接的集合，它展示了现代 Web 标准在流畅性与性能方面的能力。"
+    },
+    "box3": {
+      "darkTitle": "体验黑夜",
+      "lightTitle": "发现细节",
+      "darkText": "你正在查看高精度暗色界面，专为 3D 纵深与氛围光影优化。",
+      "lightText": "试试切换到深色模式，体验动态光影、萤火虫以及隐藏在阴影中的精致细节。",
+      "recommended": "推荐体验"
+    },
+    "box4": {
+      "title": "技术聚焦",
+      "quote": "在这个项目中，我重点打磨了 3D 效果和由 GSAP 驱动的动画。",
+      "text": "每一次移动都响应你的滚动，在代码与用户之间营造视觉叙事。"
+    },
+    "aboutBox": {
+      "title": "我的历程",
+      "text1": "我是一名热衷于将技术性能与创意美学融合的开发者。我的历程由不断探索网络交互新方式所定义。",
+      "text2": "除了编写代码，我更关注界面的「质感」——它如何移动、如何响应、如何让用户沉浸其中。这个作品集正是我对细节与动效热爱的结晶。",
+      "button": "关于我"
+    },
+    "box5": {
+      "title": "更多作品",
+      "text": "当然，这并不是我唯一在做的项目。想看看我的其他作品，最好的方式就是访问它们的专属页面。",
+      "button": "查看项目"
+    },
+    "box6": {
+      "title": "保持联系",
+      "text": "非常欢迎你的反馈或咨询。在这里你可以找到联系我所需的一切。请随时留言或发邮件，我会亲自回复。",
+      "button": "联系我"
+    }
+  },
+  "about": {
+    "email": "邮箱",
+    "profileLabel": "关于",
+    "profileTitle": "简介",
+    "experienceLabel": "职业",
+    "experienceTitle": "工作经历",
+    "educationLabel": "学业",
+    "educationTitle": "教育背景",
+    "projectsLabel": "作品",
+    "projectsTitle": "项目",
+    "skillsLabel": "技术栈",
+    "skillsTitle": "技能",
+    "languagesLabel": "沟通",
+    "languagesTitle": "语言"
+  },
+  "projects": {
+    "eyebrow": "精选作品",
+    "title": "项目",
+    "intro": "这里汇集了我在做的项目 —— 从已上线的网站到仍在开发中的应用与游戏。部分项目附有逐步教程，供你复现。",
+    "featured": "精选",
+    "filterAll": "全部"
+  },
+  "contact": {
+    "eyebrow": "联系",
+    "title": "让我们一起合作",
+    "emailTitle": "给我发邮件",
+    "emailSubtitle": "我会亲自回复你",
+    "locationSubtitle": "常驻北莱茵-威斯特法伦州"
+  },
+  "footer": {
+    "tagline": "来自德国哈姆的交互式网络体验。",
+    "navigation": "导航",
+    "contact": "联系",
+    "emailMe": "给我发邮件",
+    "rights": "版权所有。",
+    "creditBased": "本作品基于",
+    "creditBy": "作者",
+    "creditLicensed": "采用许可"
+  }
+}

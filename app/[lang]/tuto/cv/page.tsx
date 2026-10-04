@@ -9,14 +9,14 @@ const page = () => {
         </h2>
         <p className="text-neutral-400">
           Le contenu de cette page est actuellement en cours de création. Elle
-          sera mise en ligne dès qu'elle sera prête. Merci de votre patience !
+          sera mise en ligne dès qu&apos;elle sera prête. Merci de votre patience !
         </p>
       </div>
       <div className="flex flex-col items-center justify-center text-center p-4">
         <h2 className="text-2xl font-bold mb-4">🚧 Under Development</h2>
         <p className="text-neutral-400">
           This page is currently under construction. It will be published as
-          soon as it's ready. Thank you for your patience!
+          soon as it&apos;s ready. Thank you for your patience!
         </p>
       </div>
       <div className="flex flex-col items-center justify-center text-center p-4">

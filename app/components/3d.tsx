@@ -10,3 +10,5 @@ export const Ile = forwardRef((props, ref) => {
     </Float>
   );
 });
+
+Ile.displayName = "Ile";

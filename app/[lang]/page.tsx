@@ -15,8 +15,10 @@ import {
   Cloud,
   Clouds,
 } from "@react-three/drei";
-import SeeMoreButton from "./components/SeeMoreButton";
+import SeeMoreButton from "../components/SeeMoreButton";
 import { useTheme } from "next-themes";
+import { useLang } from "../components/LangProvider";
+import { getCv } from "../data/cv";
 
 //function pour les nuages
 function Weather({ isDarkMode }: { isDarkMode: boolean }) {
@@ -42,13 +44,17 @@ import { useFrame } from "@react-three/fiber";
 function Fireflies({ count = 40 }) {
   const mesh = useRef<THREE.Points>(null);
 
-  // Création de positions aléatoires
+  // Création de positions pseudo-aléatoires déterministes
   const particles = useMemo(() => {
+    const rand = (i: number) => {
+      const x = Math.sin(i * 127.1 + 311.7) * 43758.5453;
+      return x - Math.floor(x);
+    };
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
-      pos[i * 3] = (Math.random() - 0.5) * 15; // X
-      pos[i * 3 + 1] = Math.random() * 5; // Y (au-dessus du sol)
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 15; // Z
+      pos[i * 3] = (rand(i) - 0.5) * 15; // X
+      pos[i * 3 + 1] = rand(i + count) * 5; // Y (au-dessus du sol)
+      pos[i * 3 + 2] = (rand(i + count * 2) - 0.5) * 15; // Z
     }
     return pos;
   }, [count]);
@@ -164,28 +170,25 @@ function SingleModel({
   );
 }
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const { lang, dict, href } = useLang();
+  const cv = getCv(lang);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // 1. Vérification initiale
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    setIsDarkMode(mediaQuery.matches);
-
-    // 2. Écouteur de changement en temps réel
-    const handler = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
-    mediaQuery.addEventListener("change", handler);
-
-    return () => mediaQuery.removeEventListener("change", handler);
+    const id = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(id);
   }, []);
+
+  const isDarkMode = mounted && resolvedTheme === "dark";
   return (
     <main className="grid p-4">
       <section
         className={`fixed inset-0 h-screen w-full transition-all duration-1000 pointer-events-none 
-    ${
-      isDarkMode
-        ? "bg-gradient-to-bl from-zinc-900 via-zinc-800  via-black to-black" // LED : Gris foncé (haut-gauche) vers Noir
-        : "bg-gradient-to-bl  from-white via-sky-100 via-sky-200 to-sky-300" // CIEL : Blanc (haut-gauche) vers Bleu ciel
-    }`}
+    ${isDarkMode
+            ? "bg-gradient-to-bl from-zinc-900 via-zinc-800  via-black to-black" // LED : Gris foncé (haut-gauche) vers Noir
+            : "bg-gradient-to-bl  from-white via-sky-100 via-sky-200 to-sky-300" // CIEL : Blanc (haut-gauche) vers Bleu ciel
+          }`}
       >
         <Canvas camera={{ position: [0, 2, 10], fov: 50 }}>
           <Weather isDarkMode={isDarkMode} />
@@ -220,51 +223,63 @@ export default function Home() {
       </section>
       <section className="grid relative gap-[50vh] pointer-events-auto">
         <motion.div
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.03 }}
+          id="hero-box"
+          className="glass lg:w-1/3 p-8 relative z-20 mt-[50vh] me-[1%] ms-auto"
+        >
+          <h1 className="text-3xl font-black tracking-tight mb-2 dark:text-white">
+            {cv.name}
+          </h1>
+          <p className="text-sm font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-4">
+            {cv.title}
+          </p>
+          <p className="dark:text-slate-400 mb-2">{dict.home.hero.subtitle}</p>
+          <div className="flex gap-3">
+            <SeeMoreButton
+              text={dict.home.hero.aboutBtn}
+              href={href("/About")}
+            />
+            <SeeMoreButton
+              text={dict.home.hero.projectsBtn}
+              href={href("/Project")}
+            />
+          </div>
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.03 }}
           id="box1"
-          className=" lg:w-1/3  p-8 relative z-20 
-                backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
-                border border-slate-400 dark:border-slate-700 
-                rounded-2xl shadow-2xl mt-[50vh] mr-[1%] ml-auto dark:shadow-slate-700"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
-            My first 3D Intagration
+            {dict.home.box1.title}
           </h2>
           <p className="text-lg font-bold uppercase mb-4 dark:text-white">
-            Quick going to my Project
+            {dict.home.box1.subtitle}
           </p>
 
-          <SeeMoreButton text="Project" href="/Project" />
+          <SeeMoreButton text={dict.home.box1.button} href={href("/Project")} />
         </motion.div>
         <motion.div
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.03 }}
           id="box2"
-          className=" lg:w-1/3  p-8 relative z-20 
-                backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
-                border border-slate-400 dark:border-slate-700 dark:shadow-slate-700
-                rounded-2xl shadow-2xl mr-[1%] ml-auto "
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
-            Beyond the Pixels.
+            {dict.home.box2.title}
           </h2>
           <p className="text-l font-bold uppercase mb-4 dark:text-white">
-            A journey through motion, 3D interactions, and high-performance
-            engineering.
+            {dict.home.box2.subtitle}
           </p>
-          <p className="dark:text-slate-400">
-            This portfolio is more than just a simple collection of links. It is
-            a demonstration of what modern web standards can offer in terms of
-            fluidity and performance.
-          </p>
+          <p className="dark:text-slate-400">{dict.home.box2.text}</p>
         </motion.div>
         <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           id="box3"
-          className="lg:w-1/3 p-6 relative z-20 backdrop-blur-md bg-white/80 dark:bg-zinc-900/50 border-2 border-dashed border-amber-400/50 dark:border-zinc-700 rounded-3xl mr-[1%] ml-auto shadow-xl"
+          className="lg:w-1/3 p-6 relative z-20 backdrop-blur-md bg-white/80 dark:bg-zinc-900/50 border-2 border-dashed border-amber-400/50 dark:border-zinc-700 rounded-3xl me-[1%] ms-auto shadow-xl"
         >
           <div className="flex items-start gap-4">
             <div className="p-3 bg-amber-100 dark:bg-zinc-800 rounded-2xl">
@@ -277,109 +292,85 @@ export default function Home() {
 
             <div>
               <h3 className="text-xl font-bold dark:text-white mb-2">
-                {isDarkMode ? "Experience the Night" : "Reveal the Details"}
+                {isDarkMode ? dict.home.box3.darkTitle : dict.home.box3.lightTitle}
               </h3>
               <p className="text-sm dark:text-slate-400 leading-relaxed">
-                {isDarkMode
-                  ? "You are currently viewing the high-precision dark interface, optimized for 3D depth and atmospheric lighting."
-                  : "Try switching your device to Dark Mode. Experience the dynamic lighting, fireflies, and the meticulous attention to detail hidden in the shadows."}
+                {isDarkMode ? dict.home.box3.darkText : dict.home.box3.lightText}
               </p>
 
               {!isDarkMode && (
                 <div className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-tighter text-amber-600 dark:text-amber-400">
                   <div className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
-                  Recommended Experience
+                  {dict.home.box3.recommended}
                 </div>
               )}
             </div>
           </div>
         </motion.div>
         <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
           id="box4"
-          className=" lg:w-1/3  p-8 relative z-20 
-                backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
-                border border-slate-400 dark:border-slate-700 
-                rounded-2xl shadow-2xl mr-[1%] ml-auto dark:shadow-slate-700"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
-            Technical Focus
+            {dict.home.box4.title}
           </h2>
 
           <p className="text-lg font-semibold dark:text-yellow-500 mb-2 italic">
-            "For this project, I focused heavily on the 3D aspect and animations
-            powered by GSAP."
+            &ldquo;{dict.home.box4.quote}&rdquo;
           </p>
-          <p className="dark:text-slate-400">
-            Every movement is orchestrated to react to your scroll, creating a
-            visual narrative between the code and the user.
-          </p>
+          <p className="dark:text-slate-400">{dict.home.box4.text}</p>
         </motion.div>
         <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
           id="about-box"
-          className=" lg:w-1/3  p-8 relative z-20 
-                backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
-                border border-slate-400 dark:border-slate-700 
-                rounded-2xl shadow-2xl mr-[1%] ml-auto dark:shadow-slate-700"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
-            My Journey
+            {dict.home.aboutBox.title}
           </h2>
 
-          <p className="dark:text-slate-400 mb-4">
-            I am a developer driven by the desire to merge technical performance
-            with creative aesthetics. My journey is defined by a constant search
-            for new ways to interact with the web.
-          </p>
+          <p className="dark:text-slate-400 mb-4">{dict.home.aboutBox.text1}</p>
 
-          <p className="dark:text-slate-400 mb-6">
-            Beyond just writing code, I focus on the "feel" of an interface—how
-            it moves, how it reacts, and how it immerses the user. This
-            portfolio is the result of that passion for detail and motion.
-          </p>
+          <p className="dark:text-slate-400 mb-6">{dict.home.aboutBox.text2}</p>
 
-          <SeeMoreButton text="About Me" href="/About" />
+          <SeeMoreButton
+            text={dict.home.aboutBox.button}
+            href={href("/About")}
+          />
         </motion.div>
         <motion.div
-          whileHover={{ scale: 1.1 }}
-          id="box4"
-          className=" lg:w-1/3  p-8 relative z-20 
-                backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 
-                border border-slate-400 dark:border-slate-700 
-                rounded-2xl shadow-2xl mr-[1%] ml-auto dark:shadow-slate-700"
-        >
-          <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
-            Extended Portfolio
-          </h2>
-          <p className="dark:text-slate-400">
-            Naturally, this isn't the only project I’m working on. To see my
-            other works, what better way than to visit the page dedicated to
-            them?
-          </p>
-          <SeeMoreButton text="View Projects" href="/Project" />
-        </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.03 }}
           id="box5"
-          className=" lg:w-1/3  p-8 relative z-20 
-                backdrop-blur-xs bg-white/80 dark:bg-zinc-900/80 
-                border border-slate-400 dark:border-slate-700 
-                rounded-2xl shadow-2xl mr-[1%] ml-auto mb-[10%] dark:shadow-slate-700"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
-            Let's Connect
+            {dict.home.box5.title}
+          </h2>
+          <p className="dark:text-slate-400">{dict.home.box5.text}</p>
+          <SeeMoreButton
+            text={dict.home.box5.button}
+            href={href("/Project")}
+          />
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          id="box6"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto mb-[10%]"
+        >
+          <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
+            {dict.home.box6.title}
           </h2>
           <p className="dark:text-slate-400 leading-relaxed">
-            I would be very happy to receive your feedback or inquiries. Here,
-            you will find everything you need to reach out. Please don't
-            hesitate to leave a message or an email; I will personally ensure a
-            response.
+            {dict.home.box6.text}
           </p>
           {/* Reusing the button for Contact */}
-          <SeeMoreButton text="Contact Me" href="/contact" />
+          <SeeMoreButton
+            text={dict.home.box6.button}
+            href={href("/contact")}
+          />
         </motion.div>
       </section>
     </main>

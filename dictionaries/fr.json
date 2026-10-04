@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "Yvan Wildis Ngone Tchinda | Portfolio",
+    "description": "Développeur full-stack & étudiant en génie électrique — portfolio, projets et CV de Yvan Wildis Ngone Tchinda."
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact",
+    "language": "Langue"
+  },
+  "common": {
+    "downloadCv": "Télécharger le CV",
+    "email": "E-mail",
+    "seeAllProjects": "Voir tous les projets",
+    "liveDemo": "LIVE DEMO",
+    "code": "CODE",
+    "tutorial": "Tutoriel",
+    "notPublished": "Pas encore publié"
+  },
+  "status": {
+    "live": "En ligne",
+    "inDevelopment": "En développement",
+    "prototype": "Prototype"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "Je crée des expériences web interactives et je publie mes propres projets — des portfolios 3D aux plateformes full-stack.",
+      "aboutBtn": "À propos de moi",
+      "projectsBtn": "Projets"
+    },
+    "box1": {
+      "title": "Ma première intégration 3D",
+      "subtitle": "Direction mes projets",
+      "button": "Projets"
+    },
+    "box2": {
+      "title": "Au-delà des pixels.",
+      "subtitle": "Un voyage à travers le motion, les interactions 3D et l'ingénierie haute performance.",
+      "text": "Ce portfolio est plus qu'une simple collection de liens. C'est une démonstration de ce que les standards web modernes peuvent offrir en fluidité et en performance."
+    },
+    "box3": {
+      "darkTitle": "Découvre la nuit",
+      "lightTitle": "Révèle les détails",
+      "darkText": "Tu consultes actuellement l'interface sombre haute précision, optimisée pour la profondeur 3D et l'éclairage atmosphérique.",
+      "lightText": "Essaie de passer ton appareil en mode sombre. Découvre l'éclairage dynamique, les lucioles et l'attention méticuleuse aux détails cachée dans l'ombre.",
+      "recommended": "Expérience recommandée"
+    },
+    "box4": {
+      "title": "Focus technique",
+      "quote": "Pour ce projet, je me suis concentré sur l'aspect 3D et les animations propulsées par GSAP.",
+      "text": "Chaque mouvement est orchestré pour réagir à ton scroll, créant un récit visuel entre le code et l'utilisateur."
+    },
+    "aboutBox": {
+      "title": "Mon parcours",
+      "text1": "Je suis un développeur animé par l'envie de fusionner performance technique et esthétique créative. Mon parcours est défini par une recherche constante de nouvelles façons d'interagir avec le web.",
+      "text2": "Au-delà du code, je me concentre sur le « ressenti » d'une interface — comment elle bouge, réagit et immerge l'utilisateur. Ce portfolio est le résultat de cette passion pour le détail et le mouvement.",
+      "button": "À propos de moi"
+    },
+    "box5": {
+      "title": "Portfolio étendu",
+      "text": "Naturellement, ce n'est pas le seul projet sur lequel je travaille. Pour voir mes autres réalisations, quoi de mieux que de visiter la page qui leur est dédiée ?",
+      "button": "Voir les projets"
+    },
+    "box6": {
+      "title": "Restons en contact",
+      "text": "Je serais ravi de recevoir tes retours ou tes demandes. Tu trouveras ici tout ce qu'il faut pour me joindre. N'hésite pas à laisser un message ou un e-mail ; je veillerai personnellement à te répondre.",
+      "button": "Contacte-moi"
+    }
+  },
+  "about": {
+    "email": "E-mail",
+    "profileLabel": "À propos",
+    "profileTitle": "Profil",
+    "experienceLabel": "Parcours",
+    "experienceTitle": "Expérience",
+    "educationLabel": "Études",
+    "educationTitle": "Formation",
+    "projectsLabel": "Réalisations",
+    "projectsTitle": "Projets",
+    "skillsLabel": "Stack",
+    "skillsTitle": "Compétences",
+    "languagesLabel": "Communication",
+    "languagesTitle": "Langues"
+  },
+  "projects": {
+    "eyebrow": "Travaux sélectionnés",
+    "title": "Projets",
+    "intro": "Une sélection de ce que je construis — des sites publiés aux applications et jeux encore en développement. Certains incluent des tutoriels pas à pas pour les recréer.",
+    "featured": "À la une",
+    "filterAll": "Tous"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Travaillons ensemble",
+    "emailTitle": "Écris-moi un e-mail",
+    "emailSubtitle": "Je te répondrai personnellement",
+    "locationSubtitle": "Basé en Rhénanie-du-Nord-Westphalie"
+  },
+  "footer": {
+    "tagline": "Des expériences web interactives depuis Hamm, Allemagne.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "emailMe": "Écris-moi",
+    "rights": "Tous droits réservés.",
+    "creditBased": "Cette œuvre est basée sur",
+    "creditBy": "par",
+    "creditLicensed": "sous licence"
+  }
+}

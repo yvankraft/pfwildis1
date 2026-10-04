@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "Yvan Wildis Ngone Tchinda | Portfolio",
+    "description": "Full-Stack-Entwickler & Elektrotechnik-Student — Portfolio, Projekte und Lebenslauf von Yvan Wildis Ngone Tchinda."
+  },
+  "nav": {
+    "home": "Start",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "language": "Sprache"
+  },
+  "common": {
+    "downloadCv": "Lebenslauf herunterladen",
+    "email": "E-Mail",
+    "seeAllProjects": "Alle Projekte ansehen",
+    "liveDemo": "LIVE DEMO",
+    "code": "CODE",
+    "tutorial": "Tutorial",
+    "notPublished": "Noch nicht veröffentlicht"
+  },
+  "status": {
+    "live": "Live",
+    "inDevelopment": "In Entwicklung",
+    "prototype": "Prototyp"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "Ich entwickle interaktive Web-Erlebnisse und veröffentliche eigene Projekte — von 3D-Portfolios bis zu Full-Stack-Plattformen.",
+      "aboutBtn": "Über mich",
+      "projectsBtn": "Projekte"
+    },
+    "box1": {
+      "title": "Meine erste 3D-Integration",
+      "subtitle": "Direkt zu meinen Projekten",
+      "button": "Projekte"
+    },
+    "box2": {
+      "title": "Jenseits der Pixel.",
+      "subtitle": "Eine Reise durch Motion, 3D-Interaktionen und High-Performance-Engineering.",
+      "text": "Dieses Portfolio ist mehr als eine einfache Linksammlung. Es zeigt, was moderne Webstandards an Flüssigkeit und Performance bieten können."
+    },
+    "box3": {
+      "darkTitle": "Erlebe die Nacht",
+      "lightTitle": "Entdecke die Details",
+      "darkText": "Du siehst gerade die hochpräzise dunkle Oberfläche, optimiert für 3D-Tiefe und atmosphärische Beleuchtung.",
+      "lightText": "Probiere den Dark Mode aus. Erlebe die dynamische Beleuchtung, die Glühwürmchen und die Liebe zum Detail, die sich im Schatten verbirgt.",
+      "recommended": "Empfohlene Erfahrung"
+    },
+    "box4": {
+      "title": "Technischer Fokus",
+      "quote": "Bei diesem Projekt habe ich mich stark auf den 3D-Aspekt und die Animationen mit GSAP konzentriert.",
+      "text": "Jede Bewegung reagiert auf dein Scrollen und erzeugt eine visuelle Erzählung zwischen Code und Nutzer."
+    },
+    "aboutBox": {
+      "title": "Mein Weg",
+      "text1": "Ich bin ein Entwickler, der technische Performance mit kreativer Ästhetik verbinden möchte. Mein Weg ist geprägt von der ständigen Suche nach neuen Formen der Web-Interaktion.",
+      "text2": "Über das Schreiben von Code hinaus achte ich auf das Gefühl einer Oberfläche — wie sie sich bewegt, reagiert und den Nutzer eintauchen lässt. Dieses Portfolio ist das Ergebnis dieser Leidenschaft für Detail und Motion.",
+      "button": "Über mich"
+    },
+    "box5": {
+      "title": "Erweitertes Portfolio",
+      "text": "Natürlich ist das nicht das einzige Projekt, an dem ich arbeite. Um meine weiteren Arbeiten zu sehen, besuche am besten die dafür vorgesehene Seite.",
+      "button": "Projekte ansehen"
+    },
+    "box6": {
+      "title": "Lass uns vernetzen",
+      "text": "Ich freue mich sehr über dein Feedback oder deine Anfragen. Hier findest du alles, um mich zu erreichen. Zögere nicht, eine Nachricht oder E-Mail zu hinterlassen — ich antworte persönlich.",
+      "button": "Kontakt"
+    }
+  },
+  "about": {
+    "email": "E-Mail",
+    "profileLabel": "Über mich",
+    "profileTitle": "Profil",
+    "experienceLabel": "Werdegang",
+    "experienceTitle": "Berufserfahrung",
+    "educationLabel": "Studium",
+    "educationTitle": "Ausbildung",
+    "projectsLabel": "Arbeit",
+    "projectsTitle": "Projekte",
+    "skillsLabel": "Stack",
+    "skillsTitle": "Kenntnisse",
+    "languagesLabel": "Kommunikation",
+    "languagesTitle": "Sprachen"
+  },
+  "projects": {
+    "eyebrow": "Ausgewählte Arbeiten",
+    "title": "Projekte",
+    "intro": "Eine Auswahl meiner Arbeit — von veröffentlichten Websites bis zu Apps und Spielen in Entwicklung. Einige enthalten Schritt-für-Schritt-Tutorials zum Nachbauen.",
+    "featured": "Empfohlen",
+    "filterAll": "Alle"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Lass uns zusammenarbeiten",
+    "emailTitle": "Schreib mir eine E-Mail",
+    "emailSubtitle": "Ich melde mich persönlich bei dir",
+    "locationSubtitle": "Ansässig in Nordrhein-Westfalen"
+  },
+  "footer": {
+    "tagline": "Interaktive Web-Erlebnisse aus Hamm, Deutschland.",
+    "navigation": "Navigation",
+    "contact": "Kontakt",
+    "emailMe": "E-Mail schreiben",
+    "rights": "Alle Rechte vorbehalten.",
+    "creditBased": "Diese Arbeit basiert auf",
+    "creditBy": "von",
+    "creditLicensed": "lizenziert unter"
+  }
+}
