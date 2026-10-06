@@ -33,7 +33,7 @@ const Footer = () => {
   const heading =
     "text-xs font-bold uppercase tracking-widest text-zinc-900 dark:text-white mb-4";
   const link =
-    "text-sm text-zinc-600 dark:text-zinc-400 hover:text-amber-500 transition-colors";
+    "text-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-500 transition-colors";
 
   return (
     <footer className="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
@@ -45,7 +45,7 @@ const Footer = () => {
               href={href("/")}
               className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white"
             >
-              Yvan W<span className="text-amber-500">.</span>
+              Yvan W<span className="text-blue-500">.</span>
             </Link>
             <p className="mt-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {cv.title}
@@ -59,7 +59,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500 transition-colors"
                 >
                   <s.icon size={16} />
                 </a>
@@ -112,7 +112,7 @@ const Footer = () => {
               href="https://sketchfab.com/3d-models/house-d7498a45f2e84aa397b33a8beab16950"
               target="_blank"
               rel="noreferrer"
-              className="text-amber-600 dark:text-amber-400 font-medium hover:underline mx-1"
+              className="text-blue-600 dark:text-blue-400 font-medium hover:underline mx-1"
             >
               &ldquo;House&rdquo;
             </a>
@@ -121,16 +121,16 @@ const Footer = () => {
               href="https://sketchfab.com/alyona_novikova22"
               target="_blank"
               rel="noreferrer"
-              className="text-amber-600 dark:text-amber-400 font-medium hover:underline mx-1"
+              className="text-blue-600 dark:text-blue-400 font-medium hover:underline mx-1"
             >
               alyona_novikova22
             </a>
             {dict.footer.creditLicensed}
             <a
-              href="http://creativecommons.org/licenses/by/4.0/"
+              href="https://creativecommons.org/licenses/by/4.0/"
               target="_blank"
               rel="noreferrer"
-              className="text-amber-600 dark:text-amber-400 font-medium hover:underline ms-1"
+              className="text-blue-600 dark:text-blue-400 font-medium hover:underline ms-1"
             >
               CC-BY-4.0
             </a>

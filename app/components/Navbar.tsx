@@ -127,7 +127,7 @@ const Navbar = () => {
           href={href("/")}
           className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white"
         >
-          Yvan W<span className="text-amber-500">.</span>
+          Yvan W<span className="text-blue-500">.</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-1">

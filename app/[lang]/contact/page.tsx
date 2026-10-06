@@ -64,9 +64,9 @@ export default function ContactPage() {
           {...fadeIn}
           href="#"
           onClick={openEmail}
-          className="glass p-8 flex flex-col items-center justify-center text-center gap-3 group hover:border-amber-500/50 transition-colors"
+          className="glass p-8 flex flex-col items-center justify-center text-center gap-3 group hover:border-blue-500/50 transition-colors"
         >
-          <span className="w-12 h-12 flex items-center justify-center rounded-full bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+          <span className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500/10 text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors">
             <Mail size={22} />
           </span>
           <span className="font-bold text-zinc-900 dark:text-white">
@@ -81,7 +81,7 @@ export default function ContactPage() {
           {...fadeIn}
           className="glass p-8 flex flex-col items-center justify-center text-center gap-3"
         >
-          <span className="w-12 h-12 flex items-center justify-center rounded-full bg-amber-500/10 text-amber-500">
+          <span className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
             <MapPin size={22} />
           </span>
           <span className="font-bold text-zinc-900 dark:text-white">
@@ -101,12 +101,12 @@ export default function ContactPage() {
             href={s.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="glass p-6 flex items-center justify-between group hover:border-amber-500/50 transition-colors"
+            className="glass p-6 flex items-center justify-between group hover:border-blue-500/50 transition-colors"
           >
             <div className="flex items-center gap-3">
               <s.icon
                 size={22}
-                className="text-zinc-700 dark:text-zinc-300 group-hover:text-amber-500 transition-colors"
+                className="text-zinc-700 dark:text-zinc-300 group-hover:text-blue-500 transition-colors"
               />
               <div>
                 <p className="font-bold text-sm text-zinc-900 dark:text-white">
@@ -117,7 +117,7 @@ export default function ContactPage() {
             </div>
             <ArrowUpRight
               size={18}
-              className="text-zinc-400 group-hover:text-amber-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+              className="text-zinc-400 group-hover:text-blue-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
             />
           </motion.a>
         ))}
@@ -127,7 +127,7 @@ export default function ContactPage() {
         <a
           href={cv.cvPdf}
           download
-          className="flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 dark:bg-amber-500 text-white dark:text-zinc-900 font-semibold text-sm hover:opacity-90 transition-opacity"
+          className="flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 dark:bg-blue-500 text-white dark:text-zinc-900 font-semibold text-sm hover:opacity-90 transition-opacity"
         >
           <Download size={16} /> {dict.common.downloadCv}
         </a>

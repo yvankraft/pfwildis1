@@ -77,7 +77,7 @@ function Fireflies({ count = 40 }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.1}
-        color="#ffcc00"
+        color="#60a5fa"
         transparent
         opacity={0.8}
         sizeAttenuation
@@ -90,8 +90,8 @@ function Moon() {
   return (
     <mesh position={[5, 5, -10]}>
       <sphereGeometry args={[1.5, 32, 32]} />
-      <meshBasicMaterial color="#ffffcc" />
-      <pointLight intensity={50} color="#ffffcc" distance={20} decay={1} />
+      <meshBasicMaterial color="#dbeafe" />
+      <pointLight intensity={50} color="#dbeafe" distance={20} decay={1} />
     </mesh>
   );
 }
@@ -101,8 +101,8 @@ function Sun() {
   return (
     <mesh position={[5, 5, -10]}>
       <sphereGeometry args={[1.5, 32, 32]} />
-      <meshBasicMaterial color="#FFD700" />
-      <pointLight intensity={2} distance={100} color="#FFF5B2" />
+      <meshBasicMaterial color="#1d4ed8" />
+      <pointLight intensity={2} distance={100} color="#60a5fa" />
     </mesh>
   );
 }
@@ -114,7 +114,7 @@ function Loader() {
     <Html center>
       <div className="flex flex-col items-center">
         {/* Un petit cercle de chargement stylé */}
-        <div className="w-10 h-10 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
         <p className="mt-2 text-xs font-bold uppercase tracking-widest dark:text-white">
           {Math.round(progress)}%
         </p>
@@ -221,16 +221,16 @@ export default function Home() {
           </Suspense>
         </Canvas>
       </section>
-      <section className="grid relative gap-[50vh] pointer-events-auto">
+      <section className="grid relative pointer-events-auto">
         <motion.div
           whileHover={{ scale: 1.03 }}
           id="hero-box"
-          className="glass lg:w-1/3 p-8 relative z-20 mt-[50vh] me-[1%] ms-auto"
+          className="glass lg:w-1/3 p-8 relative z-20 mt-[34vh] me-[1%] ms-auto mb-[50vh]"
         >
           <h1 className="text-3xl font-black tracking-tight mb-2 dark:text-white">
             {cv.name}
           </h1>
-          <p className="text-sm font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-4">
+          <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-4">
             {cv.title}
           </p>
           <p className="dark:text-slate-400 mb-2">{dict.home.hero.subtitle}</p>
@@ -239,16 +239,12 @@ export default function Home() {
               text={dict.home.hero.aboutBtn}
               href={href("/About")}
             />
-            <SeeMoreButton
-              text={dict.home.hero.projectsBtn}
-              href={href("/Project")}
-            />
           </div>
         </motion.div>
         <motion.div
           whileHover={{ scale: 1.03 }}
           id="box1"
-          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto mb-[50vh]"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             {dict.home.box1.title}
@@ -262,7 +258,7 @@ export default function Home() {
         <motion.div
           whileHover={{ scale: 1.03 }}
           id="box2"
-          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto mb-[50vh]"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             {dict.home.box2.title}
@@ -279,10 +275,10 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           id="box3"
-          className="lg:w-1/3 p-6 relative z-20 backdrop-blur-md bg-white/80 dark:bg-zinc-900/50 border-2 border-dashed border-amber-400/50 dark:border-zinc-700 rounded-3xl me-[1%] ms-auto shadow-xl"
+          className="lg:w-1/3 p-6 relative z-20 backdrop-blur-md bg-white/80 dark:bg-zinc-900/50 border-2 border-dashed border-blue-400/50 dark:border-zinc-700 rounded-3xl me-[1%] ms-auto shadow-xl mb-[50vh]"
         >
           <div className="flex items-start gap-4">
-            <div className="p-3 bg-amber-100 dark:bg-zinc-800 rounded-2xl">
+            <div className="p-3 bg-blue-100 dark:bg-zinc-800 rounded-2xl">
               {isDarkMode ? (
                 <span className="text-2xl">🌙</span>
               ) : (
@@ -299,8 +295,8 @@ export default function Home() {
               </p>
 
               {!isDarkMode && (
-                <div className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-tighter text-amber-600 dark:text-amber-400">
-                  <div className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
+                <div className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-tighter text-blue-600 dark:text-blue-400">
+                  <div className="w-2 h-2 rounded-full bg-blue-500 animate-ping" />
                   {dict.home.box3.recommended}
                 </div>
               )}
@@ -311,13 +307,13 @@ export default function Home() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           id="box4"
-          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto mb-[50vh]"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             {dict.home.box4.title}
           </h2>
 
-          <p className="text-lg font-semibold dark:text-yellow-500 mb-2 italic">
+          <p className="text-lg font-semibold dark:text-blue-500 mb-2 italic">
             &ldquo;{dict.home.box4.quote}&rdquo;
           </p>
           <p className="dark:text-slate-400">{dict.home.box4.text}</p>
@@ -326,7 +322,7 @@ export default function Home() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           id="about-box"
-          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto mb-[50vh]"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             {dict.home.aboutBox.title}
@@ -344,7 +340,7 @@ export default function Home() {
         <motion.div
           whileHover={{ scale: 1.03 }}
           id="box5"
-          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto mb-[50vh]"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             {dict.home.box5.title}
@@ -358,7 +354,7 @@ export default function Home() {
         <motion.div
           whileHover={{ scale: 1.03 }}
           id="box6"
-          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto mb-[10%]"
+          className="glass lg:w-1/3 p-8 relative z-20 me-[1%] ms-auto mb-10"
         >
           <h2 className="text-3xl font-bold uppercase mb-4 dark:text-white">
             {dict.home.box6.title}

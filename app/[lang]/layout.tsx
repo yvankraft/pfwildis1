@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import Navbar from "../components/Navbar";
@@ -49,6 +50,9 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }>) {
   const { lang: langParam } = await params;
+  if (!i18n.locales.includes(langParam as Locale)) {
+    notFound();
+  }
   const lang = langParam as Locale;
   const dict = await getDictionary(lang);
 

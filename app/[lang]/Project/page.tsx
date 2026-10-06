@@ -43,7 +43,7 @@ export default function ProjectsPage() {
 
   return (
     <main className="relative min-h-screen bg-zinc-50 dark:bg-zinc-950 flex flex-col items-center pb-20 overflow-hidden">
-      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(245,158,11,0.12),transparent_70%)] dark:bg-[radial-gradient(circle,rgba(245,158,11,0.08),transparent_70%)] pointer-events-none" />
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.12),transparent_70%)] dark:bg-[radial-gradient(circle,rgba(59,130,246,0.08),transparent_70%)] pointer-events-none" />
       <div className="max-w-6xl w-full px-4 relative">
         {/* Hero */}
         <motion.div
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
           className="grid lg:grid-cols-5 gap-10 items-end py-16 md:py-24"
         >
           <div className="lg:col-span-3">
-            <p className="text-xs uppercase tracking-widest text-amber-600 dark:text-amber-500">
+            <p className="text-xs uppercase tracking-widest text-blue-600 dark:text-blue-500">
               {dict.projects.eyebrow}
             </p>
             <h1 className="mt-2 text-5xl md:text-7xl font-black tracking-tight text-zinc-900 dark:text-white">
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
               href={featured.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="lg:col-span-2 glass p-6 block group hover:border-amber-500/50 transition-colors"
+              className="lg:col-span-2 glass p-6 block group hover:border-blue-500/50 transition-colors"
             >
               <div className="flex items-center justify-between gap-2">
                 <p className="text-xs uppercase tracking-widest text-zinc-500">
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
                 </p>
                 <StatusBadge status={featured.status} />
               </div>
-              <h2 className="mt-3 text-2xl font-bold text-zinc-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              <h2 className="mt-3 text-2xl font-bold text-zinc-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {featured.title}
               </h2>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -107,7 +107,7 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-amber-600 dark:text-amber-400">
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400">
                 <FiExternalLink size={16} /> {dict.common.liveDemo}
               </span>
             </motion.a>
@@ -162,7 +162,7 @@ export default function ProjectsPage() {
               {/* Content */}
               <div className="p-8">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest">
+                  <span className="text-xs font-bold text-blue-600 dark:text-blue-500 uppercase tracking-widest">
                     {project.category}
                   </span>
                   <StatusBadge status={project.status} />
@@ -193,7 +193,7 @@ export default function ProjectsPage() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-bold hover:text-amber-600 dark:hover:text-amber-500 transition-colors"
+                      className="flex items-center gap-2 text-sm font-bold hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
                     >
                       <FiExternalLink size={18} /> {dict.common.liveDemo}
                     </a>
@@ -203,7 +203,7 @@ export default function ProjectsPage() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-bold hover:text-amber-600 dark:hover:text-amber-500 transition-colors"
+                      className="flex items-center gap-2 text-sm font-bold hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
                     >
                       <SiGithub size={18} /> {dict.common.code}
                     </a>

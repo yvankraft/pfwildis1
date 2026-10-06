@@ -25,7 +25,7 @@ export default function ThemeToggle() {
       className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-colors"
     >
       {isDark ? (
-        <Sun size={18} className="text-amber-400" />
+        <Sun size={18} className="text-blue-400" />
       ) : (
         <Moon size={18} className="text-zinc-800" />
       )}

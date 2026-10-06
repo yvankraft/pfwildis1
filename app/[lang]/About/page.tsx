@@ -44,7 +44,7 @@ function Timeline({
           : (item as Cv["education"][number]).school;
         return (
           <motion.div key={i} {...fadeIn} className="relative">
-            <span className="absolute -start-[31px] top-2 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-amber-500/20" />
+            <span className="absolute -start-[31px] top-2 w-3 h-3 rounded-full bg-blue-500 ring-4 ring-blue-500/20" />
             <div className="glass p-6">
               <div className="flex flex-wrap items-start justify-between gap-2">
                 <div>
@@ -65,7 +65,7 @@ function Timeline({
                     key={j}
                     className="text-sm text-zinc-600 dark:text-zinc-400 flex gap-2"
                   >
-                    <span className="text-amber-500 mt-0.5">•</span>
+                    <span className="text-blue-500 mt-0.5">•</span>
                     {b}
                   </li>
                 ))}
@@ -103,7 +103,7 @@ export default function AboutPage() {
         <h1 className="text-5xl md:text-7xl font-black tracking-tight text-zinc-900 dark:text-white">
           {cv.name}
         </h1>
-        <p className="mt-3 text-xl md:text-2xl font-medium text-amber-600 dark:text-amber-500">
+        <p className="mt-3 text-xl md:text-2xl font-medium text-blue-600 dark:text-blue-500">
           {cv.title}
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400">
@@ -113,7 +113,7 @@ export default function AboutPage() {
           <a
             href="#"
             onClick={openEmail}
-            className="flex items-center gap-1.5 hover:text-amber-500 transition-colors"
+            className="flex items-center gap-1.5 hover:text-blue-500 transition-colors"
           >
             <Mail size={16} /> {dict.about.email}
           </a>
@@ -122,7 +122,7 @@ export default function AboutPage() {
           <a
             href={cv.cvPdf}
             download
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 dark:bg-amber-500 text-white dark:text-zinc-900 font-semibold text-sm hover:opacity-90 transition-opacity"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 dark:bg-blue-500 text-white dark:text-zinc-900 font-semibold text-sm hover:opacity-90 transition-opacity"
           >
             <Download size={16} /> {dict.common.downloadCv}
           </a>
@@ -133,7 +133,7 @@ export default function AboutPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 dark:hover:text-zinc-900 transition-colors"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-zinc-900 transition-colors"
             >
               <s.icon size={18} />
             </a>
@@ -185,7 +185,7 @@ export default function AboutPage() {
                     <>
                       <div>
                         <div className="flex flex-wrap items-center gap-2">
-                          <h3 className="font-bold text-zinc-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                          <h3 className="font-bold text-zinc-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             {p.title}
                           </h3>
                           <StatusBadge status={p.status} />
@@ -207,13 +207,13 @@ export default function AboutPage() {
                       {p.link && (
                         <ExternalLink
                           size={18}
-                          className="shrink-0 mt-1 text-zinc-400 group-hover:text-amber-500 transition-colors"
+                          className="shrink-0 mt-1 text-zinc-400 group-hover:text-blue-500 transition-colors"
                         />
                       )}
                     </>
                   );
                   const cardClass =
-                    "glass p-5 flex items-start justify-between gap-4 group hover:border-amber-500/50 transition-colors";
+                    "glass p-5 flex items-start justify-between gap-4 group hover:border-blue-500/50 transition-colors";
                   return p.link ? (
                     <motion.a
                       key={p.title}
@@ -234,7 +234,7 @@ export default function AboutPage() {
             </div>
             <Link
               href={href("/Project")}
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-600 dark:text-amber-400 hover:underline"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline"
             >
               {dict.common.seeAllProjects} <ArrowRight size={16} />
             </Link>
@@ -291,7 +291,7 @@ export default function AboutPage() {
                       whileInView={{ width: `${l.pct}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, ease: "easeOut" }}
-                      className="h-full rounded-full bg-amber-500"
+                      className="h-full rounded-full bg-blue-500"
                     />
                   </div>
                 </div>
